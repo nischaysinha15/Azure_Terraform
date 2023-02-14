@@ -25,7 +25,7 @@ resource "azurerm_web_application_firewall_policy" "waf" {
 
       operator           = custom_rules.match_conditions.operator
       negation_condition = custom_rules.match_conditions.negation_condition
-      match_values       = custom_rules.match_conditions.match_values
+      match_values       = [custom_rules.match_conditions.match_values]
     }
 
     action = custom_rules.action
